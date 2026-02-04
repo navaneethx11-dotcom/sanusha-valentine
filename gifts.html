@@ -15,14 +15,8 @@ body{
   text-align:center;
 }
 
-h1{
-  margin-top:40px;
-}
-
-.hint{
-  opacity:0.85;
-  font-size:0.95rem;
-}
+h1{ margin-top:40px; }
+.hint{ opacity:0.85; font-size:0.95rem; }
 
 .gifts{
   display:flex;
@@ -42,7 +36,6 @@ h1{
   50%{transform:translateY(-12px);}
 }
 
-/* modal */
 .modal{
   display:none;
   position:fixed;
@@ -60,6 +53,13 @@ h1{
   border-radius:16px;
   width:90%;
   max-width:360px;
+  text-align:center;
+}
+
+.modal-content img{
+  max-width:100%;
+  border-radius:12px;
+  margin:10px 0;
 }
 
 .next-btn{
@@ -76,7 +76,6 @@ h1{
 </head>
 
 <body>
-
 <h1>Just for you 💝</h1>
 <p class="hint">(Tap each gift 🎁)</p>
 
@@ -97,34 +96,41 @@ function openGift(type){
   const modal = document.getElementById("modal");
   const content = document.getElementById("content");
 
+  // Gift 1: Romantic melting text
   if(type === 1){
     content.innerHTML = `
-      <h3>Just a feeling 💗</h3>
+      <h3>For My Heart 💗</h3>
       <p>
-        Some people don’t just walk into your life.<br>
-        They quietly change everything.
+        When I think of you, my heart melts a little each time.<br>
+        Your smile, your voice, your presence — it’s like warmth spreading through me.<br>
+        Sanusha, you are my gentle sunshine. ☀️
       </p>
     `;
   }
 
+  // Gift 2: Sweet secret
   if(type === 2){
     content.innerHTML = `
-      <h3>A small secret 💌</h3>
+      <h3>A Secret 💌</h3>
       <p>
-        You feel like comfort.<br>
-        Like peace.<br>
-        Like home.
+        You feel like home.<br>
+        Every moment with you is comfort.<br>
+        I carry you with me in every thought.
       </p>
     `;
   }
 
+  // Gift 3: Eye photo
   if(type === 3){
     content.innerHTML = `
-      <h3>One truth 🤍</h3>
+      <h3>Look into my soul 👀</h3>
+      <img src="eyes.jpg" alt="My eyes for you">
       <p>
-        You matter to me<br>
-        more than you know.
+        These eyes chose you, Sanusha 💖<br>
+        And they will always see only you.
       </p>
+      <br>
+      <button onclick="goNext()">Continue ❤️</button>
     `;
   }
 
