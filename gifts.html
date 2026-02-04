@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You 🎁</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(160deg,#ff5f8a,#ff85a1);
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  color:white;
+  text-align:center;
+}
+
+h1{
+  margin-top:40px;
+}
+
+.hint{
+  opacity:0.85;
+  font-size:0.95rem;
+}
+
+.gifts{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin:60px 0;
+}
+
+.gift{
+  font-size:3rem;
+  cursor:pointer;
+  animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+
+/* modal */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.modal-content{
+  background:white;
+  color:#333;
+  padding:24px;
+  border-radius:16px;
+  width:90%;
+  max-width:360px;
+}
+
+.next-btn{
+  margin-top:30px;
+  padding:14px 30px;
+  font-size:1.05rem;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff5f8a;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Just for you 💝</h1>
+<p class="hint">(Tap each gift 🎁)</p>
+
+<div class="gifts">
+  <div class="gift" onclick="openGift(1)">🎁</div>
+  <div class="gift" onclick="openGift(2)">🎁</div>
+  <div class="gift" onclick="openGift(3)">🎁</div>
+</div>
+
+<button class="next-btn" onclick="goNext()">Next ❤️</button>
+
+<div class="modal" id="modal" onclick="closeModal()">
+  <div class="modal-content" id="content" onclick="event.stopPropagation()"></div>
+</div>
+
+<script>
+function openGift(type){
+  const modal = document.getElementById("modal");
+  const content = document.getElementById("content");
+
+  if(type === 1){
+    content.innerHTML = `
+      <h3>Just a feeling 💗</h3>
+      <p>
+        Some people don’t just walk into your life.<br>
+        They quietly change everything.
+      </p>
+    `;
+  }
+
+  if(type === 2){
+    content.innerHTML = `
+      <h3>A small secret 💌</h3>
+      <p>
+        You feel like comfort.<br>
+        Like peace.<br>
+        Like home.
+      </p>
+    `;
+  }
+
+  if(type === 3){
+    content.innerHTML = `
+      <h3>One truth 🤍</h3>
+      <p>
+        You matter to me<br>
+        more than you know.
+      </p>
+    `;
+  }
+
+  modal.style.display = "flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+
+function goNext(){
+  window.location.href = "letter.html";
+}
+</script>
+
+</body>
+</html>
