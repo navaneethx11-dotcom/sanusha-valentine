@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Sanusha 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(160deg, #ff5f8a, #ff85a1);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    button {
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background: white;
+      color: #ff5f8a;
+    }
+
+    #no {
+      background: rgba(255,255,255,0.7);
+      color: #ff5f8a;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <h1>Sanusha 💕</h1>
+    <h2>Will you be my Valentine?</h2>
+
+    <br>
+
+    <button id="yes" onclick="goNext()">Yes 💖</button>
+    <button id="no">No 🙈</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    function moveNo() {
+      noBtn.style.left = Math.random() * 80 + "vw";
+      noBtn.style.top = Math.random() * 80 + "vh";
+    }
+
+    noBtn.addEventListener("mouseover", moveNo);
+    noBtn.addEventListener("click", moveNo);
+
+    function goNext() {
+      window.location.href = "gifts.html";
+    }
+  </script>
+
+</body>
+</html>
